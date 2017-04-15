@@ -1,0 +1,17 @@
+var express = require('express'),
+    //fs = require('fs'),
+    //pg = require('pg'),
+    //multer  =  require('multer'),
+    //aws = require('aws-sdk'),
+    session = require('express-session'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
+    //nodemailer = require('nodemailer'),
+    //smtpTransport = require("nodemailer-smtp-transport"),
+    //passport = require('passport'),
+    //LocalStrategy = require('passport-local'),
+    //funct = require('./functions.js'),
+    port = process.env.PORT || 8888,
+    currentFile = '',
+    app = express();
+
