@@ -9,26 +9,21 @@ function ensureAdminAuthenticated(req, res, next) {
 };
 
 
-router.post('/section', ensureAdminAuthenticated, function (req, res) {
-	const result = SectionStoreManager.addSection(req.body);
-	if (result)
-		res.sendStatus(200);
-	else
-		// TODO: test & handle this client side
-		res.sendStatus(400);
+router.post('/section', ensureAdminAuthenticated, async function (req, res) {
+	const result = await SectionStoreManager.addSection(req.body);
+	res.json({
+		id: result
+	});
 });
 
-router.put('/section', ensureAdminAuthenticated, function (req, res) {
+router.put('/section', ensureAdminAuthenticated, async function (req, res) {
 	// TODO: see if this works
-	const result = SectionStoreManager.updateSection(req.body);
-	if (result)
-		res.sendStatus(200);
-	else
-		res.sendStatus(400);
+	const result = await SectionStoreManager.updateSection(req.body);
+	res.sendStatus(200);
 });
 
-router.delete('/section', ensureAdminAuthenticated, function (req, res) {
-	const result = SectionStoreManager.deleteSection(req.body.id);
+router.delete('/section', ensureAdminAuthenticated, async function (req, res) {
+	const result = await SectionStoreManager.deleteSection(req.body.id);
 	if (result)
 		res.sendStatus(200);
 	else

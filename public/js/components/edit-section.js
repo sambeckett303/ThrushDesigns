@@ -28,7 +28,8 @@ Vue.component('edit-section',
 			id: (this.sectionInfo ? this.sectionInfo.id : ''),
 			description: (this.sectionInfo ? this.sectionInfo.description : ''),
 			primaryPhotoURL: (this.sectionInfo && this.sectionInfo.primaryphoto !== '' ? this.sectionInfo.primaryphoto : null),
-			images: (this.sectionInfo ? ProcessImages(this.sectionInfo.images) : [])
+			images: (this.sectionInfo ? ProcessImages(this.sectionInfo.images) : []),
+			loading: false
 		};
 	},
 	computed:
@@ -61,6 +62,13 @@ Vue.component('edit-section',
 		+			'</div>'
 		+		'</div>'
 		+	'</div>'
+		+	'<modal v-if="loading">'
+		+		'<div slot="header">Processing the request...</div>'
+		+		'<div slot="body">'
+		+			'<div class="loadingAnimation"></div>'
+		+		'</div>'
+		+		'<div slot="footer"></div>'
+		+	'</modal>'
 		+'</div>',
 	methods:
 	{
@@ -71,6 +79,7 @@ Vue.component('edit-section',
 			// Reset name and description
 			this.name = '';
 			this.description = '';
+			this.loading = true;
 			$.ajax(
 			{
 				url: '/section',
@@ -80,10 +89,10 @@ Vue.component('edit-section',
 					name: name,
 					description: description
 				},
-				success: function()
+				success: function(response)
 				{
-					// TODO: figure out what id is..? may need to reload the page, or get id back from server response
-					sectionsArray.push({ name: name, description: description });
+					this.loading = false;
+					sectionsArray.push({ id: response.id, name: name, description: description });
 					Vue.nextTick(function()
 					{
 						$('li[id="' + name + '"]').click();

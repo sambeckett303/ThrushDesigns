@@ -9,11 +9,10 @@ class SectionStoreManager
 		await client.connect();
 		var url = encodeURI(addObj.name.replace(/ /g,"_"));
 		var queryStr = "insert into sections (name, description, url) values ('"
-                            + addObj.name + "', '" + addObj.description + "', '" + url + "')";
-		console.log(queryStr);
+                            + addObj.name + "', '" + addObj.description + "', '" + url + "')  returning id";
 		const res = await client.query(queryStr);
 		await client.end();
-		return;
+		return res.rows[0].id;
 	}
 
 	async updateSection(updateObj)
@@ -32,7 +31,11 @@ class SectionStoreManager
 		{
 			queryStr += "description = '" + updateObj.description + "',";
 		}
-		if (updateObj.images)
+		if (updateObj.images == "empty")
+		{
+			queryStr += "images = '{}',";
+		}
+		else if (updateObj.images)
 		{
 			queryStr += "images = '{";
 			for (var i = 0; i < updateObj.images.length; i++)

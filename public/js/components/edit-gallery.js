@@ -10,6 +10,7 @@ Vue.component('edit-gallery',
 	{
 		return {
 			primarySrc: this.primary,
+			loading: false,
 			fileID: 'newImage' + this.id
 		};
 	},
@@ -21,6 +22,7 @@ Vue.component('edit-gallery',
 		},
 		startUpload: function()
 		{
+			this.loading = true;
 			var files = document.getElementById(this.fileID).files;
 			var file = files[0];
 			this.getSignedRequest(file);
@@ -82,16 +84,17 @@ Vue.component('edit-gallery',
 				data:
 				{
 					id: this.id,
-					images: this.images
+					images: (this.images.length ? this.images : "empty")
 				},
 				success: function()
 				{
-					console.log('success updated images');
-				}
+					this.loading = false;
+				}.bind(this)
 			});
 		},
 		removeImage: function(image)
 		{
+			this.loading = true;
 			$.ajax(
 			{
 				url: 'image',
@@ -161,5 +164,12 @@ Vue.component('edit-gallery',
 		+			'<input :id="fileID" @change="startUpload" type="file" name="file" style="width: 0px;height: 0px;overflow: hidden;"></input>'
 		+		'</div>'
 		+	'</div>'
+		+	'<modal v-if="loading">'
+		+		'<div slot="header">Processing the request...</div>'
+		+		'<div slot="body">'
+		+			'<div class="loadingAnimation"></div>'
+		+		'</div>'
+		+		'<div slot="footer"></div>'
+		+	'</modal>'
 		+'</div>'
 });
