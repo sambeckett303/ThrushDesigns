@@ -1,0 +1,267 @@
+.tabContainer {
+    background-image: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 100%);
+    border-bottom: solid 1px #656565;
+    font-size: 14px;
+    width: 100%;
+    margin: 0;
+    padding: 5px 5px 0px 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.tabSelected {
+    border-top: solid 3px #56a22a;
+    border-left: solid 1px #56a22a;
+    border-right: solid 1px #56a22a;
+    border-bottom: none;
+    outline: none;
+    background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 100%);
+}
+
+.tabContainer li {
+    cursor: pointer;
+    text-align: center;
+    margin: 0px 3px;
+    padding: 5px 10px;
+    margin-bottom: -1px;
+    display: inline-block;
+    min-width: 100px;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin: 10px 0px;
+    color: #667382;
+}
+
+#addPage
+{
+    text-align: center;
+}
+
+#editTitleContainer {
+    border-top: 2px solid #56a22a;
+    border-bottom: 1px solid #56a22a;
+}
+
+#editTitleContainer h2 {
+    color: #000000;
+    padding: 10px 15px;
+    margin: 0;
+}
+
+#editPageContainer {
+    margin: 0 auto;
+    border: solid 1px #56a22a;
+}
+
+/*
+.imageContainer {
+    display: inline-block;
+    width: 32%;
+    padding: 5px;
+    text-align: center;
+    vertical-align: middle;
+}
+*/
+.moveDown {
+    margin-top: -18px !important;
+}
+
+.addImage {
+    height: 200px;
+    border: 1px dotted #56a22a;
+    margin: 30px;
+    cursor: pointer;
+}
+
+.plusIcon {
+    width: 100px;
+    height: 100px;
+    background: url(/img/plusIcon.png);
+    background-size: contain;
+}
+
+#blogGrid
+{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    column-gap: 35px;
+    margin-top: 35px;
+}
+
+.gridWrapper
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.blogTitleList
+{
+    font-size: 15px;
+    margin: 15px 0px 15px;
+}
+
+.blogTitleList:hover
+{
+    color: #56a22a;
+    cursor: pointer
+}
+
+.blogActive
+{
+    color: #56a22a;
+}
+
+.pencilIcon
+{
+    width: 20px;
+    height: 20px;
+    background: url(/img/pencilIcon.png);
+    background-size: contain;
+    display: inline-block;
+}
+
+.pencilIcon:hover
+{
+    cursor: pointer;
+    background: url(/img/pencilHover.png);
+    background-size: contain;
+}
+
+.applyIcon
+{
+    width: 20px;
+    height: 20px;
+    background: url(/img/applyIcon.png);
+    background-size: contain;
+    display: inline-block;
+}
+
+.applyIcon:hover
+{
+    cursor: pointer;
+    background: url(/img/applyHover.png);
+    background-size: contain;
+}
+
+.cancelIcon
+{
+    width: 20px;
+    height: 20px;
+    background: url(/img/cancelIcon.png);
+    background-size: contain;
+    display: inline-block;
+}
+
+.cancelIcon:hover
+{
+    cursor: pointer;
+    background: url(/img/cancelHover.png);
+    background-size: contain;
+}
+
+.trashIcon
+{
+    width: 20px;
+    height: 20px;
+    background: url(/img/trashIcon.png);
+    background-size: contain;
+    display: inline-block;
+}
+
+.trashIcon:hover
+{
+    cursor: pointer;
+    background: url(/img/trashHover.png);
+    background-size: contain;
+}
+
+#storeGrid
+{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    column-gap: 35px;
+    margin-top: 35px;
+}
+
+#productModalGrid
+{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-gap: 20px;
+}
+
+#productImageGrid
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+#productImageGrid > div
+{
+    position: relative;
+    height: 200px;
+}
+
+#productImageGrid > div > img
+{
+    max-width: 80%;
+    max-height: 200px;
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.editProduct
+{
+    background: #000;
+    opacity: .5;
+    width: 100%;
+    height: 100%;
+}
+
+#adminProductGrid
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+#adminProductGrid img
+{
+    height: 100%;
+    transition: 0.4s ease;
+    cursor: pointer;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    display: block;
+    margin: auto;
+    object-fit: cover;
+}
+
+#adminProductGrid > div
+{
+  padding: 10px;
+}
+
+#adminProductGrid .imageContainer
+{
+    position: relative;
+    height: 275px;
+    overflow: hidden;
+}
+
+#adminProductGrid > div > div:not(.imageContainer)
+{
+    margin-top: 15px;
+    font-size: 20px;
+    margin-left: 3px;
+}

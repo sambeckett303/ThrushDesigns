@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Thrush Designs</title>
+	<meta name="description" content="Thrush Designs">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="css/app.css">
+	<!--<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>-->
+	<script src="js/lib/jquery.min.js" text="text/javascript"></script>
+	<script src="js/lib/vue.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
+	<script type="text/javascript" src="js/cart.js"></script>
+	<script type="text/javascript">
+		var cart =<%-JSON.stringify(cart)%>;
+	</script>
+</head>
+<body>
+	<div id="bodyContainer">
+		<a href="/"><div id="logo"></div></a>	
+		<nav id="navBar">
+			<ul>
+				<li>MENU</li>
+				<a href="/work"><li>WORK</li></a>
+				<a href="/store"><li>STORE</li></a>
+				<a href="/blog"><li>BLOG</li></a>
+				<a href="/about"><li>ABOUT</li></a>
+			</ul>
+		</nav>
+		<h1>TODO: Your Cart</h1>
+		<div id="footerSection">
+			<div id="footerLogo"></div>
+			<div id="whiteFooterLine"></div>
+			<div id="footerBird"></div>
+			<div class="footerMenuItem">HOME</div>
+			<div class="footerMenuItem">WORK</div>
+			<div class="footerMenuItem">STORE</div>
+			<div class="footerMenuItem">BLOG</div>
+			<div class="footerMenuItem">ABOUT</div>
+			<div id="footerCopywrite">Copywrite &copy; 2018 All rights reserved.</div>
+		</div>
+		<div id="mobileMenu">
+			<div id="closeMenu"></div>
+			<div>
+				<div>
+					<div><a href="/work">WORK</a></div>
+					<div><a href="/store">STORE</a></div>
+					<div><a href="/blog">BLOG</a></div>
+					<div><a href="/about">ABOUT</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

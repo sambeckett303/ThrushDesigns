@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Thrush Designs</title>
+	<meta name="description" content="Thrush Designs">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="css/app.css">
+	<!--<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>-->
+	<script src="js/lib/jquery.min.js" text="text/javascript"></script>
+	<script src="js/lib/vue.js"></script>
+	<script type="text/javascript" src="js/work.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
+	<script type="text/javascript" src="js/components/work-slideshow.js"></script> 
+	<script type="text/javascript">
+		var sectionsArray =<%-JSON.stringify(sections)%>;
+	</script>
+</head>
+<body>
+	<div id="bodyContainer">
+		<a href="/"><div id="logo"></div></a>	
+		<nav id="navBar">
+			<ul>
+				<li>MENU</li>
+				<a href="#"><li class="active">WORK</li></a>
+				<a href="/store"><li>STORE</li></a>
+				<a href="/blog"><li>BLOG</li></a>
+				<a href="/about"><li>ABOUT</li></a>
+			</ul>
+		</nav>
+		<div id="pageGrid">
+			<div>
+				<div class="pageTitle">WORK</div>
+				<div class="divideBar"></div>
+				<div class="sectionLabel" @click="viewAll" :class="{ sectionActive: viewAllActive }" style="margin: 5px 0px;">View All</div>
+				<template v-for="section in sections">
+					<div class="sectionLabel" @click="goToSection" :class="{ sectionActive: section.active }">{{section.name}}</div>
+				</template>
+			</div>
+			<div>
+				<div v-if="viewAllActive" id="homeWorkGrid">
+					<template v-for="section in sections">
+						<div>
+							<div class="imageContainer" @click="goToSection($event, section)">
+								<img :src="section.primaryphoto"> 
+							</div>
+							<div class="label">{{section.name}}</div>
+						</div>
+					</template>
+				</div>
+				<div v-if="sectionActive" id="activeSection">
+					<h1>{{currentName}}</h1>
+					<p>{{currentSectionDescription}}</p>
+					<work-slideshow :pics="currentSectionImages" :height="getWorkHeight()"></work-slideshow>
+				</div>
+			</div>
+		</div>
+		<div id="footerSection">
+			<div id="footerLogo"></div>
+			<div id="whiteFooterLine"></div>
+			<div id="footerBird"></div>
+			<div class="footerMenuItem">HOME</div>
+			<div class="footerMenuItem">WORK</div>
+			<div class="footerMenuItem">STORE</div>
+			<div class="footerMenuItem">BLOG</div>
+			<div class="footerMenuItem">ABOUT</div>
+			<div id="footerCopywrite">Copywrite &copy; 2018 All rights reserved.</div>
+		</div>
+		<div id="mobileMenu">
+			<div id="closeMenu"></div>
+			<div>
+				<div>
+					<div><a href="/work">WORK</a></div>
+					<div><a href="/store">STORE</a></div>
+					<div><a href="/blog">BLOG</a></div>
+					<div><a href="/about">ABOUT</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

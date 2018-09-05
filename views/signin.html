@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Thrush Designs - Sign in</title>
+	<link rel="stylesheet" href="css/app.css">
+	<script src="js/lib/jquery.min.js" text="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#sign-in-button').click(function() {
+				var email = document.getElementById('emailInput').value;
+				var psw = document.getElementById('psw').value;
+				var data = {
+					username: email,
+					password: psw
+				};
+				$.ajax({
+					url: '/login',
+					method: 'POST',
+					data: data,
+					success: function() {
+						if (window.location.pathname == '/signin')
+							window.location = '/admin';
+					}
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="logo"></div>
+	<div style="margin: 0 auto;width: 214px;">
+		<h3>Sign In</h3>
+		<label for="username">Email</label>
+		<input id="emailInput" type="text"></input>
+		<label style="margin-top: 20px;" for="password">Password</label>
+		<input id="psw" type="password"></input>
+		<div id="sign-in-button" style="margin-top: 20px;" class="thrushButton">SIGN IN</div>
+	</div>
+</body>
+</html>
+

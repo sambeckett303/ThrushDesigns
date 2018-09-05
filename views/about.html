@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Thrush Designs</title>
+	<meta name="description" content="Thrush Designs">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="css/app.css">
+	<!--<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>-->
+	<script src="js/lib/jquery.min.js" text="text/javascript"></script>
+	<script src="js/lib/vue.js"></script>
+	<script type="text/javascript" src="js/components/modal.js"></script>
+	<script type="text/javascript" src="js/about.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
+</head>
+<body>
+	<div id="bodyContainer">
+		<a href="/"><div id="logo"></div></a>	
+		<nav id="navBar">
+			<ul>
+				<li>MENU</li>
+				<a href="/work"><li>WORK</li></a>
+				<a href="/store"><li>STORE</li></a>
+				<a href="/blog"><li>BLOG</li></a>
+				<a href="#"><li class="active">ABOUT</li></a>
+			</ul>
+		</nav>
+		<div id="pageGrid">
+			<div>
+				<div class="pageTitle">ABOUT</div>
+				<div class="divideBar"></div>
+				<template v-for="section in aboutSections">
+					<div class="sectionLabel" @click="sectionClicked(section)" :class="{ sectionActive: section.active }">{{section.title}}</div>
+				</template>
+			</div>
+			<div>
+				<div v-if="aboutSections[0].active">
+					<h1>About Thrush Designs</h1>
+					<p>I'd like to share the a little bit about who Thrush Designs is here. It's all about how Thrush Designs came to be where it is today! I need help crafting the text for this section, but I'd like to include a couple photos of Gay and Aaron and both their workshops below this text here!</p>
+				</div>
+				<div v-if="aboutSections[1].active">
+					<h1>Hello from Events!</h1>
+					<p>TODO: this</p>
+				</div>
+				<div v-if="aboutSections[2].active" id="contactArea">
+					<h1>CONTACT</h1>
+					<p>Fill out this form and I'll get back to you shortly. Thank you!</p>
+					<label for="name">Name</label>
+					<input type="text" name="name" v-model="name"></input>
+					<label style="margin-top: 25px;" for="email">Email Address</label>
+					<input type="email" name="email" v-model="email"></input>
+					<label style="margin-top:25px;" for="message">Message</label>
+					<textarea rows="4" id="contactMessage" v-model="message"></textarea>
+					<div style="margin: 30px 0px;">
+						<div @click="sendEmail" class="thrushButton">SUBMIT</div>
+					</div>
+				</div>
+			</div>
+			<modal v-if="showModal">
+				<div slot="header">Success</div>
+				<div slot="body">
+					<p>Thank you! I will get back to you as soon as I can!</p>
+				</div>
+				<div slot="footer"><div @click="showModal = false" class="thrushButton">CLOSE</div></div>
+			</modal>
+			<modal v-if="loading">
+				<div slot="header">Processing the request...</div>
+				<div slot="body">
+					<div class="loadingAnimation"></div>
+				</div>
+				<div slot="footer"></div>
+			</modal>
+		</div>
+		<div id="footerSection">
+			<div id="footerLogo"></div>
+			<div id="whiteFooterLine"></div>
+			<div id="footerBird"></div>
+			<div class="footerMenuItem">HOME</div>
+			<div class="footerMenuItem">WORK</div>
+			<div class="footerMenuItem">STORE</div>
+			<div class="footerMenuItem">BLOG</div>
+			<div class="footerMenuItem">ABOUT</div>
+			<div id="footerCopywrite">Copywrite &copy; 2018 All rights reserved.</div>
+		</div>
+		<div id="mobileMenu">
+			<div id="closeMenu"></div>
+			<div>
+				<div>
+					<div><a href="/work">WORK</a></div>
+					<div><a href="/store">STORE</a></div>
+					<div><a href="/blog">BLOG</a></div>
+					<div><a href="/about">ABOUT</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

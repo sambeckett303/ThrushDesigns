@@ -10,9 +10,19 @@
   "author": "Sam Beckett",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.259.1",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.1",
     "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.6",
     "express": "^4.15.2",
-    "express-session": "^1.15.2"
+    "express-session": "^1.15.2",
+    "heroku-pg": "^2.4.0",
+    "nodemailer": "^4.6.8",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pg": "^7.4.0",
+    "q": "^1.5.1"
   }
 }
