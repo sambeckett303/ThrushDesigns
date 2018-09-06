@@ -3,6 +3,7 @@ Vue.component('edit-store',
 	data: function()
 	{
 		return {
+			loading: false,
 			productModal: false,
 			editingProduct: false,
 			currentImage: 'https://www.image.ie/images/no-image.png',
@@ -121,6 +122,7 @@ Vue.component('edit-store',
 			// Push the url into this.productImages. Pop the elements from this.newProductImages.
 			if (this.newProductImages.length)
 			{
+				this.loading = true;
 				this.startUploads();
 			}
 			else
@@ -166,6 +168,7 @@ Vue.component('edit-store',
 			{
 				var requestType = 'POST';
 			}
+			this.loading = true;
 			$.ajax(
 			{
 				url: '/product',
@@ -173,6 +176,7 @@ Vue.component('edit-store',
 				data: updateData,
 				success: function(updateData)
 				{
+					this.loading = false;
 					if (this.editingProduct)
 					{
 						for (var i = 0; i < this.products.length; i++)
@@ -355,6 +359,13 @@ Vue.component('edit-store',
 				<div class="thrushButton" @click="confirmModal">{{editingProduct ? "Edit Product" : "Add Product"}}</div>
 				<div class="thrushButton" @click="cancelModal">Cancel</div>
 			</div>
+		</modal>
+		<modal v-if="loading">
+			<div slot="header">Processing the request...</div>
+			<div slot="body">
+				<div class="loadingAnimation"></div>
+			</div>
+			<div slot="footer"></div>
 		</modal>
 	</div>`
 });
