@@ -9,7 +9,7 @@ class SectionStoreManager
 		await client.connect();
 		var url = encodeURI(addObj.name.replace(/ /g,"_"));
 		var queryStr = "insert into sections (name, description, url) values ('"
-                            + addObj.name + "', '" + addObj.description + "', '" + url + "')  returning id";
+                            + addObj.name.replace(/'/g, "''") + "', '" + addObj.description.replace(/'/g, "''") + "', '" + url + "')  returning id";
 		const res = await client.query(queryStr);
 		await client.end();
 		return res.rows[0].id;
@@ -29,7 +29,7 @@ class SectionStoreManager
 		}
 		if (updateObj.description)
 		{
-			queryStr += "description = '" + updateObj.description + "',";
+			queryStr += "description = '" + updateObj.description.replace(/'/g, "''") + "',";
 		}
 		if (updateObj.images == "empty")
 		{
@@ -40,7 +40,7 @@ class SectionStoreManager
 			queryStr += "images = '{";
 			for (var i = 0; i < updateObj.images.length; i++)
 			{
-				queryStr += '{"' + updateObj.images[i].description + '","' + updateObj.images[i].url + '"},';
+				queryStr += '{"' + updateObj.images[i].description.replace(/'/g, "''") + '","' + updateObj.images[i].url + '"},';
 			}
 			// Remove last comma
 			queryStr = queryStr.slice(0, -1);
