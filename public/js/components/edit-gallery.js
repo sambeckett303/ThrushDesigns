@@ -151,7 +151,7 @@ Vue.component('edit-gallery',
 		+	'<label>Section Gallery Images:</label>'
 		+	'<div class="gridWrapper">'
 		+		'<div v-for="image in images" class="imageContainer">'
-		+			'<img :src="image.url" style="max-height: 300px;max-width: 300px;">'
+		+			'<img :src="image.url" style="max-height: 300px;max-width: 300px;margin: 0 auto;display: block;">'
 		+			'<label>Image description:</label>'
 		+			'<textarea rows="4" @focusout="updateDescription(image)" v-model="image.description" style="width: 90%;"></textarea>'
 		+			'<div v-if="image.url != primarySrc" class="thrushButton" @click="markAsPrimary(image)">Use As Primary</div>'

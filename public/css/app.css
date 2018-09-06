@@ -219,11 +219,7 @@ textarea
 .modal-enter .modal-container,
 .modal-leave-active .modal-container {
   -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
   transform: scale(1.1);
-  
 }
 
 
@@ -235,10 +231,6 @@ textarea
     cursor: pointer;
     position: relative;
     transition: all 0.35s ease;
-    -webkit-transition: all 0.35s ease;
-    -moz-transition:all 0.35s ease;
-    -ms-transition:all 0.35s ease;
-   -o-transition:all 0.35s ease;
 }
 
 .thrushButton:hover {
@@ -255,16 +247,9 @@ textarea
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: opacity 0.35s;
-  -webkit-transition: opacity 0.35s;
-  -moz-transition: opaicty 0.35s;
-  -ms-transition: opaicty 0.35s;
-  -o-transition: opaicty 0.35s;
-  transform 0.35s;
-  -moz-transform: 0.35s;
-  -ms-transform: 0.35s;
-  -o-transform: 0.35s;
-  -webkit-transform: 0.35s;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  
 }
 
 .thrushButton:before {
@@ -272,9 +257,6 @@ textarea
   border-right: 1px solid green;
   -webkit-transform: scale(1,0);
   transform: scale(1,0);
-  -moz-transform: scale(1,0);
-  -ms-transform: scale(1,0);
-  -o-transform: scale(1,0);
 }
 
 .thrushButton:after {
@@ -282,9 +264,6 @@ textarea
   border-top: 1px solid green;
   -webkit-transform: scale(0,1);
   transform: scale(0,1);
-  -moz-transform: scale(0,1);
-  -ms-transform: scale(0,1);
-  -o-transform: scale(0,1);
 }
 
 .thrushButton:hover:after,
@@ -292,9 +271,6 @@ textarea
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
 }
 
 .imageSection > img {
@@ -372,19 +348,11 @@ textarea
 .slideshow-enter-active
 {
   animation: open-right 1s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-animation: open-right 1s cubic-bezier(0.4, 0, 0.2, 1);
-  -moz-animation: open-right 1s cubic-bezier(0.4, 0, 0.2, 1);
-  -ms-animation: open-right 1s cubic-bezier(0.4, 0, 0.2, 1);
-  -o-animation: open-right 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slideshow-leave-active
 {
   animation: close-left 1s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-animation: close-left 1s cubic-bezier(0.4, 0, 0.2, 1);
-  -moz-animation: close-left 1s cubic-bezier(0.4, 0, 0.2, 1);
-  -ms-animation: close-left 1s cubic-bezier(0.4, 0, 0.2, 1);
-  -o-animation: close-left 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes open-right
@@ -527,14 +495,7 @@ textarea
 #pageGrid {
   width: 95%;
   margin: 0 auto;
-  display: table;
   display: grid;
-}
-
-#pageGrid > div {
-    width: 200px;
-    display: inline-block;
-    vertical-align: top;
 }
 
 #pageGrid p {
@@ -573,9 +534,6 @@ textarea
     font-size: 20px;
     margin-left: 3px;
 }
-
-#productGrid > div > div:not(.imageContainer)
-
 
 .pageTitle {
   font-size: 17px;
@@ -619,10 +577,6 @@ textarea
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
 }
 
 .workSlideshowContainer .imageContainer {
@@ -645,10 +599,6 @@ textarea
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
 }
 
 .prevIcon {
@@ -660,85 +610,54 @@ textarea
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
   cursor: pointer;
 }
 
 .nextslide-enter {
   opacity: 0;
   transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-  -moz-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -o-transform: translateX(100%);
 }
 
 .nextslide-enter-to {
   transform: translateX(0);
-  -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -o-transform: translateX(0);
   opacity: 1;
 }
 
 .nextslide-leave {
   transform: translateX(0);
-  -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -o-transform: translateX(0);
   opacity: 1;
 }
 
 .nextslide-leave-to
 {
   transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
-  -moz-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  -o-transform: translateX(-100%);
   opacity: 0;
 }
 
 .prevslide-enter {
   opacity: 0;
   transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
-  -moz-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  -o-transform: translateX(-100%);
 }
 
-.prevslide-enter-to .prevslide-leave {
+.prevslide-enter-to {
   transform: translateX(0);
-  -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -o-transform: translateX(0);
+  opacity: 1;
+}
+
+.prevslide-leave {
+  transform: translateX(0);
   opacity: 1;
 }
 
 .prevslide-leave-to
 {
   transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-  -moz-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -o-transform: translateX(100%);
   opacity: 0;
 }
 
 .nextslide-enter-active, .nextslide-leave-active,
 .prevslide-enter-active, .prevslide-leave-active {
   transition: all .7s ease;
-  -webkit-transition: all .7s ease;
-  -moz-transition: all .7s ease;
-  -ms-transition: all .7s ease;
-  -o-transition: all .7s ease;
 }
 
 #contactMessage
@@ -873,10 +792,6 @@ textarea
   opacity: 0;
   text-align: center;
   transition: .3s all ease;
-  -webkit-transition: .3s all ease;
-  -moz-transition: .3s all ease;
-  -ms-transition: .3s all ease;
-  -o-transition: .3s all ease;
 }
 
 #mobileMenu > div {
@@ -928,12 +843,6 @@ textarea
     grid-gap: 25px;
     padding: 5px;
     margin-top: 15px;
-  }
-
-  #pageGrid > div {
-    display: table-cell;
-    width: 200px;
-    vertical-align: top;
   }
   #productGrid {
     grid-template-columns: 1fr;
