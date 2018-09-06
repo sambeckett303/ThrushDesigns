@@ -29,7 +29,7 @@ class SectionStoreManager
 		}
 		if (updateObj.description)
 		{
-			queryStr += "description = '" + updateObj.description.replace(/'/g, "''") + "',";
+			queryStr += "description = '" + updateObj.description.replace(/'/g, "''").replace(/"/g, '\"') + "',";
 		}
 		if (updateObj.images == "empty")
 		{
@@ -40,7 +40,7 @@ class SectionStoreManager
 			queryStr += "images = '{";
 			for (var i = 0; i < updateObj.images.length; i++)
 			{
-				queryStr += '{"' + updateObj.images[i].description.replace(/'/g, "''") + '","' + updateObj.images[i].url + '"},';
+				queryStr += '{"' + updateObj.images[i].description.replace(/'/g, "''").replace(/"/g, '\"') + '","' + updateObj.images[i].url + '"},';
 			}
 			// Remove last comma
 			queryStr = queryStr.slice(0, -1);
