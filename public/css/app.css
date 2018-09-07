@@ -282,6 +282,8 @@ textarea
     display: block;
     margin: 0 auto;
     max-height: 500px;
+    border: 1px solid #CCCCCC;
+    padding: 10px;
 }
 
 .imageCaption {
@@ -695,7 +697,7 @@ textarea
 {
     width: 80%;
     margin: 0 auto;
-    padding: 60px 0px;
+    padding-bottom: 20px;
 }
 
 
