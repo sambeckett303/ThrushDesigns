@@ -279,15 +279,16 @@ textarea
 }
 
 .imageSection > img {
-	display: block;
-    width: 90%;
+    display: block;
     margin: 0 auto;
+    max-height: 500px;
 }
 
 .imageCaption {
 	width: 85%;
     margin: 0 auto;
     margin-top: 10px;
+    text-align: center;
 }
 
 .loadingAnimation

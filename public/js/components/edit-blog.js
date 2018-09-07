@@ -43,7 +43,7 @@ Vue.component('edit-blog',
 				data:
 				{
 					id: this.currentID,
-					content: this.blogHTML
+					content: (this.blogHTML == '' ? "empty" : this.blogHTML)
 				},
 				success: function()
 				{
@@ -126,6 +126,7 @@ Vue.component('edit-blog',
 			{
 				this.blogPartsArray = [];
 			}
+			this.setBlogHTML();
 			this.previewingBlog = true;
 		},
 		startUpload: function()
@@ -387,6 +388,10 @@ Vue.component('edit-blog',
 			}
 			
 		},
+		getPicsArray: function(filePreviewSrc)
+		{
+			return [ { active: true, url: filePreviewSrc } ];
+		},
 		publishBlog: function()
 		{
 			var today = new Date();
@@ -487,7 +492,8 @@ Vue.component('edit-blog',
 				<div slot="header">{{ editingImage ? "Edit Image Section" : "Add Image Section" }}</div>
 				<div slot="body">
 					<div v-if="filePreviewSrc">
-						<img style="width: 100%;" id="blogImgPreview" :src="filePreviewSrc">
+						<work-slideshow :pics="getPicsArray(filePreviewSrc)" height="400px"></work-slideshow>
+						
 						<label>Image Caption</label>
 						<input type="text" v-model="imageCaption">
 					</div>

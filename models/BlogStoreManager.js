@@ -24,7 +24,11 @@ class BlogStoreManager
 			var title = updateObj.title.replace(/'/g, "''");
 			queryStr += "title = '" + title + "',";
 		}
-		if (updateObj.content)
+		if (updateObj.content == "empty")
+		{
+			queryStr += "content = '',";
+		}
+		else if (updateObj.content)
 		{
 			var content = updateObj.content.replace(/'/g, "''");
 			queryStr += "content = '" + content + "',";
