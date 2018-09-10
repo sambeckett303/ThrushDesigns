@@ -890,7 +890,7 @@ textarea
   }
   #homeWorkGrid div.imageContainer {
     width: 90%;
-    height: auto;
+    height: 200px;
   }
   #activeSection > h1 {
     margin: 0;
