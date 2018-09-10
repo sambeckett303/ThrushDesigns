@@ -80,41 +80,49 @@ Vue.component('tiled-slideshow',
 	{
 		checkInterval: function()
 		{
-			setInterval(function() {
+			setTimeout(function() {
 				//this.inTransition = true;
-				for (var i = 0; i < this.transitionPanels.length; i++)
-				{
-					setTimeout(function(i) {
-						this.transitionPanels[i].inTransition = true;
-					}.bind(this, i), i * 150);
-				}
-				// 750 ms
-				setTimeout(function()
-				{
-					for (var i = 0; i < this.pics.length; i++)
-					{
-						if (this.pics[i].active)
-						{
-							this.pics[i].active = false;
-							if (i != this.pics.length - 1)
-							{
-								this.pics[i + 1].active = true;
-							}
-							else
-							{
-								this.pics[0].active = true;
-							}
-							break;
-						}
-					}
-					for (var i = 0; i < this.transitionPanels.length; i++)
-					{
-						setTimeout(function(i) {
-							this.transitionPanels[i].inTransition = false;
-						}.bind(this, i), i * 150);
-					}
-				}.bind(this), 1500); // Total transition length
+				this.doTransition();
 			}.bind(this), this.picDelay);
+		},
+		doTransition: function()
+		{
+			for (var i = 0; i < this.transitionPanels.length; i++)
+			{
+				setTimeout(function(i) {
+					this.transitionPanels[i].inTransition = true;
+				}.bind(this, i), i * 150);
+			}
+			setTimeout(function()
+			{
+				this.nextPictureActive();
+			}.bind(this), 1500);
+		},
+		nextPictureActive: function()
+		{
+			for (var i = 0; i < this.pics.length; i++)
+			{
+				if (this.pics[i].active)
+				{
+					this.pics[i].active = false;
+					if (i != this.pics.length - 1)
+					{
+						this.pics[i + 1].active = true;
+					}
+					else
+					{
+						this.pics[0].active = true;
+					}
+					break;
+				}
+			}
+			for (var i = 0; i < this.transitionPanels.length; i++)
+			{
+				setTimeout(function(i) {
+					this.transitionPanels[i].inTransition = false;
+				}.bind(this, i), i * 150);
+			}
+			setTimeout(this.doTransition, this.picDelay);
 		},
 		getTransitionPanelHeight: function()
 		{
