@@ -740,6 +740,13 @@ textarea
     border-bottom: 1px solid green;
 }
 
+#notificationContainer .thrushButton
+{
+  margin-left: 30px;
+  vertical-align: top;
+  margin-top: 5px;
+}
+
 #successIcon
 {
   height: 20px;
@@ -868,6 +875,23 @@ textarea
   p
   {
     line-height: 25px;
+  }
+  #notificationContainer
+  {
+      height: 120px;
+  }
+  #notificationContainer .thrushButton
+  {
+    margin-top: 10px;
+  }
+  #cartMessage
+  {
+      width: 170px;
+      margin-top: 18px;
+  }
+  #successIcon
+  {
+      margin-bottom: 7px;
   }
 }
 
