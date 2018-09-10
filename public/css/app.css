@@ -901,6 +901,10 @@ textarea
   #contactMessage {
     width: 98%;
   }
+  p
+  {
+    line-height: 25px;
+  }
 }
 
 /* Smartphones (landscape) ----------- */
