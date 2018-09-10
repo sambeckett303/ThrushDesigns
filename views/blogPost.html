@@ -8,8 +8,8 @@
 	<!--<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>-->
 	<script src="/js/lib/jquery.min.js" text="text/javascript"></script>
 	<script src="/js/lib/vue.js"></script>
-	<script type="text/javascript" src="js/menu.js"></script>
 	<script type="text/javascript" src="/js/blogPost.js"></script>
+	<script type="text/javascript" src="/js/menu.js"></script>
 	<script type="text/javascript">
 		var blog =<%-JSON.stringify(blog)%>;
 	</script>
@@ -49,10 +49,13 @@
 				<div>
 					<div><a href="/work">WORK</a></div>
 					<div><a href="/store">STORE</a></div>
-					<div><a href="/blog">BLOG</a></div>
+					<div><a href="/blog" class="active">BLOG</a></div>
 					<div><a href="/about">ABOUT</a></div>
 				</div>
 			</div>
+		</div>
+		<div style="display: none">
+			<img src="/img/cancelIcon.png">
 		</div>
 	</div>
 </body>

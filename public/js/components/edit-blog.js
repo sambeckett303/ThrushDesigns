@@ -165,7 +165,7 @@ Vue.component('edit-blog',
 				{
 					if(xhr.status === 200)
 					{
-						var imageHTML = '<div id="' + this.guidGenerator() + '" class="imageSection"><img src="' + url + '" alt="' + this.imageCaption + '"><div class="imageCaption">' + this.imageCaption + '</div>'
+						var imageHTML = '<div id="' + this.guidGenerator() + '" class="imageSection"><img src="' + url + '" alt="' + this.imageCaption + '"><div class="imageCaption">' + this.imageCaption + '</div></div>'
 						this.blogPartsArray.push(imageHTML);
 						this.setBlogHTML();
 						this.filePreviewSrc = '';
@@ -492,8 +492,7 @@ Vue.component('edit-blog',
 				<div slot="header">{{ editingImage ? "Edit Image Section" : "Add Image Section" }}</div>
 				<div slot="body">
 					<div v-if="filePreviewSrc">
-						<work-slideshow :pics="getPicsArray(filePreviewSrc)" height="400px"></work-slideshow>
-						
+						<work-slideshow :pics="getPicsArray(filePreviewSrc)" height="400px"></work-slideshow>	
 						<label>Image Caption</label>
 						<input type="text" v-model="imageCaption">
 					</div>

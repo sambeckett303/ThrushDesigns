@@ -284,13 +284,17 @@ textarea
     max-height: 500px;
     border: 1px solid #CCCCCC;
     padding: 10px;
+    max-width: 90%;
+    object-fit: cover;
 }
 
 .imageCaption {
-	width: 85%;
+	  width: 85%;
     margin: 0 auto;
     margin-top: 10px;
     text-align: center;
+    font-size: 14px;
+    margin-bottom: 25px;
 }
 
 .loadingAnimation
@@ -515,6 +519,7 @@ textarea
 
 #pageGrid p {
   width: 90%;
+  margin: 0 auto;
 }
 
 #productGrid
@@ -719,52 +724,11 @@ textarea
     height: 19px;
     padding: 7px 0px;
     text-align: center;
-    border-top: 1px solid grey;
-    border-left: 1px solid grey;
-    border-bottom: 1px solid grey;
-    border-right: 0;
+    border: 1px solid grey;
 }
 
-.quantity-selectors-container {
-  display: inline-block;
-  vertical-align: top;
-  margin: 0;
-  padding: 0;
-      position: relative;
-    right: 4px;
-}
-
-.quantity-selectors {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.quantity-selectors button {
-  -webkit-appearance: none;
-  appearance: none;
-  margin: 0;
-  border-radius: 0;
-  border: 1px solid grey;
-  background-color: #fff;
-  color: grey;
-}
-
-.quantity-selectors button:first-child {
-  border-bottom: 0;
-}
-
-.quantity-selectors button:hover {
-  cursor: pointer;
-}
-
-.quantity-selectors button[disabled="disabled"] {
-  cursor: not-allowed;
-}
-
-.quantity-selectors button[disabled="disabled"] span {
-  opacity: 0.5;
+#mobileMenu a.active {
+  color: green;
 }
 
 #notificationContainer
