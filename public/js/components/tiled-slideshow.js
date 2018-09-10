@@ -52,11 +52,15 @@ Vue.component('tiled-slideshow',
 			[
 				{
 					active: true,
-					src: "https://tatyanaseverydayfood.com/wp-content/uploads/2018/02/Strawberry-Tuxedo-Cake-4.jpg"
+					src: "/img/slideshow1.JPG"
 				},
 				{
 					active: false,
-					src: "https://livforcake.com/wp-content/uploads/2017/07/black-forest-cake-6.jpg"
+					src: "/img/slideshow2.jpg"
+				},
+				{
+					active: false,
+					src: "/img/slideshow3.JPG"
 				}
 			]
 		};
@@ -141,7 +145,7 @@ Vue.component('tiled-slideshow',
 		+		'</transition-group>'
 		+		'<template v-for="pic in pics">'
 		+			'<transition name="fade">'
-		+				'<img v-if="pic.active" :src="pic.src">'
+		+				'<img v-if="pic.active" class="slideshowImg" :src="pic.src">'
 		+			'</transition>'
 		+		'</template>'
 		+	'</div>'
