@@ -901,10 +901,13 @@ textarea
   {
       margin-bottom: 7px;
   }
+  .workSlideshowContainer
+  {
+    margin-top: 15px;
+  }
   .workSlideshowContainer img {
     padding: 5px;
     max-width: 87%;
-    margin-top: 15px;
   }
   #pageGrid
   {
