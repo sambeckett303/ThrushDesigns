@@ -901,6 +901,21 @@ textarea
   {
       margin-bottom: 7px;
   }
+  .workSlideshowContainer img {
+    padding: 5px;
+  }
+  #pageGrid
+  {
+    width: 100%;
+  }
+  .nextIcon
+  {
+    right: 0px;
+  }
+  .prevIcon
+  {
+    left: 0px;
+  }
 }
 
 /* Smartphones (landscape) ----------- */
