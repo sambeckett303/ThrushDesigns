@@ -1,5 +1,5 @@
 var app;
-$(document).ready(function() {
+$(window).load(function() {
 	app = new Vue(
 	{
 		el: '#bodyContainer',
