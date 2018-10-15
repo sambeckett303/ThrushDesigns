@@ -44,7 +44,7 @@ $(document).ready(function() {
 				}
 				else
 				{
-					return '600px';
+					return '650px';
 				}
 			},
 			viewAll: function()

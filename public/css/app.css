@@ -584,7 +584,7 @@ textarea
   line-height: 18px;
   font-size: 16px;
   position: absolute;
-  top: 590px;
+  top: 600px;
 }
 
 .workSlideshowContainer {
@@ -821,7 +821,7 @@ textarea
 #activeSection > h1 {
     margin: 0 auto;
     width: 90%;
-  }
+  } 
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
