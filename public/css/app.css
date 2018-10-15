@@ -584,7 +584,7 @@ textarea
   line-height: 18px;
   font-size: 16px;
   position: absolute;
-  top: 600px;
+  top: 615px;
 }
 
 .workSlideshowContainer {
@@ -851,9 +851,6 @@ textarea
     grid-template-columns: 1fr;
     padding: 20px 0px;
   }
-  workSlideshowContainer img {
-    max-width: 95%;
-  }
   #footerLogo
   {
     width: 166px;
@@ -906,6 +903,8 @@ textarea
   }
   .workSlideshowContainer img {
     padding: 5px;
+    max-width: 87%;
+    margin-top: 15px;
   }
   #pageGrid
   {
