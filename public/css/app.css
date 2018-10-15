@@ -588,7 +588,6 @@ textarea
 }
 
 .workSlideshowContainer {
-  padding: 10px 0px;
   display: table;
   position: relative;
   overflow: hidden;
@@ -933,6 +932,13 @@ textarea
   .sectionLabel
   {
     margin: 5px 30px;
+  }
+  .imageDescription
+  {
+      top: 214px;
+      width: 80% !important;
+      left: 0;
+      right: 0;
   }
 }
 
