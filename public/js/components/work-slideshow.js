@@ -28,8 +28,6 @@ Vue.component('work-slideshow',
     {
       this.images = newPics;
       this.images[0].active = true;
-      if (this.activeDescription)
-        this.activeDescription = this.images[0].description;
     }
   },
   computed:
@@ -37,13 +35,6 @@ Vue.component('work-slideshow',
     imageContainerHeight: function()
     {
       return this.height.substring(0, this.height.length - 2) - 10 + 'px';
-    }
-  },
-  mounted: function()
-  {
-    if (this.images[0] && this.images[0].description)
-    {
-      this.activeDescription = this.images[0].description;
     }
   },
   methods:
@@ -59,15 +50,11 @@ Vue.component('work-slideshow',
         	if (i == 0)
           {
           	this.images[this.images.length - 1].active = true;
-            if (this.activeDescription)
-              this.activeDescription = this.images[this.images.length - 1].description;
             break;
           }
           else
           {
           	this.images[i-1].active = true;
-            if (this.activeDescription)
-              this.activeDescription = this.images[i-1].description;
             break;
           }
         }
@@ -84,15 +71,11 @@ Vue.component('work-slideshow',
         	if (i == this.images.length - 1)
           {
           	this.images[0].active = true;
-            if (this.activeDescription)
-              this.activeDescription = this.images[0].description;
             break;
           }
           else
           {
           	this.images[i+1].active = true;
-            if (this.activeDescription)
-              this.activeDescription = this.images[i+1].description;
             break;
           }
         }
@@ -105,11 +88,11 @@ Vue.component('work-slideshow',
   				+		'<transition-group :name="transitionName">'
           +		   '<template v-for="image in images">'
           +			    '<div v-if="image.active" class="imageContainer" v-bind:key="image.url" :style="{height: imageContainerHeight}"><img :src="image.url"></div>'
+          +         '<p style="position: absolute; top: 490px; text-align: center;>{{image.description}}</p>'
           +		   '</template>'
           +		'</transition-group>'
           +		'<div v-if="images.length > 1" class="prevIcon" @click="prevImage"></div>'
           +		'<div v-if="images.length > 1" class="nextIcon" @click="nextImage"></div>'
   				+ '</div>'
-          + '<p v-if="activeDescription" style="padding-top: 20px;width: 90%;margin: 0 auto; text-align: center;">{{activeDescription}}</p>'
           +'</div>'
 });
