@@ -106,7 +106,7 @@ Vue.component('work-slideshow',
           +		   '<template v-for="image in images">'
           +         '<div v-if="image.active" v-bind:key="image.url">'
           +			      '<div class="imageContainer" :style="{height: imageContainerHeight}"><img :src="image.url"></div>'
-          +           '<p style="position: absolute; top: 490px; text-align: center;" v-html="image.description"></p>'
+          +           '<p style="position: absolute; top: 500px; text-align: center;" v-html="image.description"></p>'
           +         '</div>'
           +		   '</template>'
           +		'</transition-group>'
