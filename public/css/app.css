@@ -851,7 +851,7 @@ textarea
   }
   #detailsGrid {
     grid-template-columns: 1fr;
-    padding: 20px 0px;
+    padding: 0px 0px;
   }
   #footerLogo
   {
@@ -945,6 +945,10 @@ textarea
       left: 0;
       right: 0;
       font-size: 12px;
+  }
+  .detailsSection
+  {
+    margin-left: 30px;
   }
 }
 
