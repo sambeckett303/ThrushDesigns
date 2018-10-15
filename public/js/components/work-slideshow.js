@@ -36,7 +36,15 @@ Vue.component('work-slideshow',
   {
     imageContainerHeight: function()
     {
-      return this.height.substring(0, this.height.length - 2) - 10 + 'px';
+      if (parseInt(this.height.substring(0, this.height.length - 2)) == 350)
+      {
+          return this.height.substring(0, this.height.length - 2) - 90 + 'px';
+      }
+      else
+      {
+          return this.height.substring(0, this.height.length - 2) - 10 + 'px';
+      }
+      
     }
   },
   mounted: function()
