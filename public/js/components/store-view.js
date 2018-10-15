@@ -67,7 +67,7 @@ Vue.component('store-view',
 		+	'<div>'
 		+		'<div class="pageTitle">SHOP CATEGORIES</div>'
 		+		'<div class="divideBar"></div>'
-		+		'<div class="sectionLabel" @click="viewAll" :class="{ sectionActive: viewAllActive }" style="margin: 5px 0px;">View All</div>'
+		+		'<div class="sectionLabel" @click="viewAll" :class="{ sectionActive: viewAllActive }">View All</div>'
 		+		'<template v-for="category in categories">'
 		+			'<div class="sectionLabel" @click="filter(category)" :class="{ sectionActive: category.active }">{{category.name}}</div>'
 		+		'</template>'

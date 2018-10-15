@@ -546,6 +546,8 @@ textarea
     position: relative;
     height: 415px;
     overflow: hidden;
+    padding: 5px;
+    border: 1px solid black;
 }
 
 #productGrid > div > div:not(.imageContainer)
