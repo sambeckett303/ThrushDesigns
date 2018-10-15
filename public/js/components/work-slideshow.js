@@ -108,7 +108,7 @@ Vue.component('work-slideshow',
           +			      '<div class="imageContainer" :style="{height: imageContainerHeight}">'
           +             '<img :src="image.url">'
           +           '</div>'
-          +           '<p class="imageDescription" :style="{ top: imageContainerHeight }" v-html="image.description"></p>'
+          +           '<p class="imageDescription" v-html="image.description"></p>'
           +         '</div>'
           +		   '</template>'
           +		'</transition-group>'
