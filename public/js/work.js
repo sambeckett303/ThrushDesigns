@@ -40,7 +40,7 @@ $(document).ready(function() {
 				var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 				if (w < 500)
 				{
-					return '200px';
+					return '275px';
 				}
 				else
 				{
