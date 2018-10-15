@@ -580,9 +580,10 @@ textarea
 }
 
 .imageDescription {
-  position: absolute;
   text-align: center;
-  line-height: 15px;
+  line-height: 18px;
+  font-size: 16px;
+  padding-top: 10px;
 }
 
 .workSlideshowContainer {

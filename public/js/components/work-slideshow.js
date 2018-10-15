@@ -107,7 +107,7 @@ Vue.component('work-slideshow',
           +         '<div v-if="image.active" v-bind:key="image.url">'
           +			      '<div class="imageContainer" :style="{height: imageContainerHeight}">'
           +             '<img :src="image.url">'
-          +             '<p class="imageDescription" :style="{top: imageContainerHeight }" v-html="image.description"></p>'
+          +             '<p class="imageDescription" v-html="image.description"></p>'
           +         '</div>'
           +         '</div>'
           +		   '</template>'
