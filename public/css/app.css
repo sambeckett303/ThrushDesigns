@@ -818,6 +818,11 @@ textarea
   width: 400px;
 }
 
+#activeSection > h1 {
+    margin: 0 auto;
+    width: 90%;
+  }
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   #logo {
@@ -871,10 +876,6 @@ textarea
   #homeWorkGrid div.imageContainer {
     width: 90%;
     height: 200px;
-  }
-  #activeSection > h1 {
-    margin: 0 auto;
-    width: 90%;
   }
   #contactArea input {
     width: 98%;
