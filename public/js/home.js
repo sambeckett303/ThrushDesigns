@@ -1,5 +1,6 @@
 var app;
-$(window).load(function() {
+window.onload = function()
+{
 	app = new Vue(
 	{
 		el: '#bodyContainer',
@@ -10,4 +11,4 @@ $(window).load(function() {
 			};
 		}
 	});
-});
+};
