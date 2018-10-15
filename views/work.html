@@ -31,7 +31,7 @@
 			<div>
 				<div class="pageTitle">WORK</div>
 				<div class="divideBar"></div>
-				<div class="sectionLabel" @click="viewAll" :class="{ sectionActive: viewAllActive }" style="margin: 5px 0px;">View All</div>
+				<div class="sectionLabel" @click="viewAll" :class="{ sectionActive: viewAllActive }">View All</div>
 				<template v-for="section in sections">
 					<div class="sectionLabel" @click="goToSection" :class="{ sectionActive: section.active }">{{section.name}}</div>
 				</template>

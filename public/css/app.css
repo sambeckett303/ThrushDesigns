@@ -583,7 +583,7 @@ textarea
   text-align: center;
   line-height: 18px;
   font-size: 16px;
-  padding-top: 20px;
+  position: absolute;
 }
 
 .workSlideshowContainer {
@@ -872,7 +872,8 @@ textarea
     height: 200px;
   }
   #activeSection > h1 {
-    margin: 0;
+    margin: 0 auto;
+    width: 90%;
   }
   #contactArea input {
     width: 98%;
@@ -907,6 +908,8 @@ textarea
   #pageGrid
   {
     width: 100%;
+    padding: 0px;
+    grid-gap: 0px;
   }
   .nextIcon
   {
@@ -915,6 +918,19 @@ textarea
   .prevIcon
   {
     left: 0px;
+  }
+  .pageTitle
+  {
+    margin-left: 30px;
+  }
+  .divideBar
+  {
+    margin-left: 30px;
+    width: 75%;
+  }
+  .sectionLabel
+  {
+    margin: 5px 30px;
   }
 }
 
