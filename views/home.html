@@ -41,10 +41,10 @@
 		<div id="homeWorkGrid">
 			<template v-for="section in sections">
 				<div>
-					<div class="imageContainer">
+					<a href="/work"><div class="imageContainer">
 						<img :src="section.primaryphoto">
-					</div>
-					<div class="label">{{section.name}}</div>
+					</div></a>
+					<a href="/work"><div class="label">{{section.name}}</div></a>
 				</div>
 			</template>
 		</div>

@@ -419,7 +419,7 @@ Vue.component('edit-blog',
 		`<div>
 			<div id="blogGrid">
 				<div>
-					<div class="titleFont">BLOG POSTS</div>
+					<div class="titleFont">BLOG</div>
 					<hr>
 					<div class="blogTitleList" :class="{ blogActive: isBlogActive(blog) }" v-for="blog in blogs" @click="editBlog(blog)">{{blog.title}}</div>
 					<div class="thrushButton" @click="createBlog">NEW BLOG POST</div>

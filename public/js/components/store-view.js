@@ -65,7 +65,7 @@ Vue.component('store-view',
 	template:
 		'<div id="pageGrid">'
 		+	'<div>'
-		+		'<div class="pageTitle">SHOP CATEGORIES</div>'
+		+		'<div class="pageTitle">STORE</div>'
 		+		'<div class="divideBar"></div>'
 		+		'<div class="sectionLabel" @click="viewAll" :class="{ sectionActive: viewAllActive }">View All</div>'
 		+		'<template v-for="category in categories">'

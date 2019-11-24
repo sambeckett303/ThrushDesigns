@@ -58,6 +58,7 @@ Vue.component('edit-store',
 			}
 			if (done)
 			{
+				this.newProductImages = [];
 				this.saveProduct();
 			}
 		},
@@ -104,6 +105,27 @@ Vue.component('edit-store',
 		removeImage: function(imageUrl)
 		{
 			// TODO: make ajax request to delete image
+			this.loading = true;
+			$.ajax('/image',
+			{
+				type: 'DELETE',
+				data:
+				{
+					url: imageUrl
+				},
+				success: function(url)
+				{
+					for (var i = 0; i < this.productImages.length; i++)
+					{
+						if (this.productImages[i] == url)
+						{
+							this.productImages.splice(i, 1);
+							break;
+						}
+					}
+					this.loading = false;
+				}.bind(this, imageUrl)
+			});
 		},
 		removeNewImage: function(imageObj)
 		{
@@ -174,7 +196,7 @@ Vue.component('edit-store',
 				url: '/product',
 				type: requestType,
 				data: updateData,
-				success: function(updateData)
+				success: function(updateData, id)
 				{
 					this.loading = false;
 					if (this.editingProduct)
@@ -190,6 +212,7 @@ Vue.component('edit-store',
 					}
 					else
 					{
+						updateData.id = id.id;
 						this.products.push(updateData);
 					}
 					this.productName = '';

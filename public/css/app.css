@@ -518,7 +518,6 @@ textarea
 }
 
 #pageGrid p {
-  width: 90%;
   margin: 0 auto;
 }
 
@@ -558,7 +557,7 @@ textarea
 }
 
 .pageTitle {
-  font-size: 17px;
+  font-size: 28px;
 }
 
 .divideBar {
@@ -780,7 +779,7 @@ textarea
 #mobileMenu
 {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -824,6 +823,14 @@ textarea
     margin: 0 auto;
     width: 90%;
   } 
+
+/* Tablets (portrait and landscape) ----------- */
+@media only screen and (max-width : 768px) {
+  #pageGrid {
+    padding: 0px 40px;
+    width: auto;
+  }
+}
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -913,6 +920,7 @@ textarea
   }
   #pageGrid
   {
+    padding: 0px;
     width: 100%;
     padding: 0px;
     grid-gap: 0px;
@@ -950,6 +958,19 @@ textarea
   {
     margin-left: 30px;
   }
+  #navBar {
+    margin-bottom: 10px;
+  }
+  #productGrid > div {
+    padding: 0px;
+  }
+  #pageGrid > div:nth-child(2) {
+    padding: 0px 15px;
+  }
+  #activeSection > h1 {
+    margin: 0 auto;
+    width: auto;
+  }
 }
 
 /* Smartphones (landscape) ----------- */
@@ -972,11 +993,6 @@ textarea
     height: 45px;
     margin: 10px auto;
   }
-}
-
-/* Tablets (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-
 }
 
 /* Tablets (landscape) ----------- */
