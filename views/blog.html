@@ -29,7 +29,7 @@
 		</nav>
 		<div id="pageGrid">
 			<div>
-				<div class="pageTitle">BLOG POSTS</div>
+				<div class="pageTitle">BLOG</div>
 				<div class="divideBar"></div>
 				<template v-for="blogTitle in blogTitles">
 					<div class="sectionLabel" @click="loadBlog(title)">{{blogTitle.title}}</div>
@@ -62,6 +62,7 @@
 			<div id="closeMenu"></div>
 			<div>
 				<div>
+					<div><a href="/">HOME</a></div>
 					<div><a href="/work">WORK</a></div>
 					<div><a href="/store">STORE</a></div>
 					<div><a href="/blog" class="active">BLOG</a></div>

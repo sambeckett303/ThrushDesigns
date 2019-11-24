@@ -78,7 +78,7 @@ Vue.component('store-view',
 		+				'<div @click="goToProductDetails(product)" class="imageContainer">'
 		+					'<img :src="product.images[0]">'
 		+				'</div>'
-		+				'<div>{{product.name}}</div>'
+		+				'<div @click="goToProductDetails(product)">{{product.name}}</div>'
 		+				'<div>{{product.price}}</div>'
 		+			'</div>'
 		+		'</div>'
